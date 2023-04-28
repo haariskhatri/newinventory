@@ -19,6 +19,7 @@
     "test": "test"
   },
   "scripts": {
+    "start": "nodemon app",
     "test": "mocha"
   },
   "author": "",
