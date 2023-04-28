@@ -1,5 +1,14 @@
 const ethers = require('ethers');
+const express = require('express');
+const bodyparser = require('body-parser');
+const path = require('path');
 
+
+const app = express();
+
+app.use(bodyparser.urlencoded({ extended: false }));
+
+var contract;
 
 const connect = async () => {
 
@@ -9,10 +18,16 @@ const connect = async () => {
     const provider = new ethers.providers.InfuraProvider("sepolia", "f6f192f81294461f873a6243cfccad29");
     const signer = new ethers.Wallet(key, provider);
 
-    const contract = new ethers.Contract("0xE3b1176545E9658d36bF9EE5e059309678d27501", contractabi.abi, signer);
+    contract = new ethers.Contract("0xE3b1176545E9658d36bF9EE5e059309678d27501", contractabi.abi, signer);
 
     console.log(await contract.manager());
 
 }
 
 connect();
+
+app.
+
+    app.post('/add-product', async (req, res) => {
+
+    })
