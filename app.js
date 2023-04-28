@@ -26,8 +26,17 @@ const connect = async () => {
 
 connect();
 
-app.
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'login.html'));
+})
 
-    app.post('/add-product', async (req, res) => {
+app.get('/add-product', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'add-product.html'))
+})
+app.post('/add-product', async (req, res) => {
 
-    })
+})
+
+app.listen(4000, () => {
+    console.log("Running");
+})
