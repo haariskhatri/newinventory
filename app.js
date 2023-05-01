@@ -13,7 +13,7 @@ app.use(express.json())
 const readData = require('./components/readdata');
 const addProduct = require('./components/addProduct');
 const { addLocation, getLocation, getAllLocations } = require('./components/location');
-const { getManager } = require('./components/connect');
+
 const product = require('./components/addProduct');
 
 

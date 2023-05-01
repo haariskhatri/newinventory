@@ -53,13 +53,14 @@ async function addNewProduct(
 
     pinata.pinJSONToIPFS(data).then(async (result) => {
         //handle results here
-        const uri = `https://ipfs.io/ipfs/${result}`;
+        console.log(result.IpfsHash);
+        const uri = `https://ipfs.io/ipfs/${result.IpfsHash}`;
         console.log(uri);
         setTimeout(async () => {
             const tx = await contract.AddProducts(
-                [2],
-                [10],
-                ["https://ipfs.io/ipfs/QmWXhYwpXCnRWtXp3KPSdz8svLSjD6LJ7NM9fFyrNCsR1A"]
+                [4],
+                [amount],
+                [uri]
             );
 
             const receipt = await tx.wait();
@@ -74,7 +75,7 @@ async function addNewProduct(
             }).save();
 
 
-        }, 5 * 1000);
+        }, 10 * 1000);
     })
 
 }
