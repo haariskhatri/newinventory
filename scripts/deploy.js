@@ -7,7 +7,11 @@
 const hre = require("hardhat");
 
 async function main() {
+  const contract = hre.ethers.getContractFactory("Warehouse");
+  const warehouse = (await contract).deploy();
 
+  (await warehouse).deployed();
+  console.log("Deployed at : ", (await warehouse).address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
