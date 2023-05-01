@@ -33,6 +33,7 @@ app.get('/', (req, res) => {
 app.get('/add-product', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'add-product.html'))
 })
+
 app.post('/add-product', async (req, res) => {
 
 })
